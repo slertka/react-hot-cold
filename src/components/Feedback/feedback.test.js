@@ -10,4 +10,10 @@ describe("<Feedback />", () => {
   it("renders without crashing", () => {
     shallow(<Feedback />);
   });
+
+  it("returns the correct feedback when a user makes a guess", () => {
+    const guessCount = 2;
+    const wrapper = shallow(<Feedback guessCount={guessCount} />);
+    expect(wrapper.text()).toEqual(" Guess again!");
+  });
 });

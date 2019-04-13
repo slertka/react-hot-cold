@@ -1,7 +1,7 @@
 import React from "react";
 
 import GuessList from "../GuessList/guess-list";
-import GuessCount from "../GameCount/guess-count";
+import GuessCount from "../GuessCount/guess-count";
 import AuralStatus from "../AuralStatus/aural-status";
 
 export default function StatusSection(props) {
