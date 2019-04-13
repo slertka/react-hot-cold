@@ -55,5 +55,16 @@ describe("<Game />", () => {
     expect(wrapper.state("guesses")).toEqual([100, 50, 70, 90, 99]);
   });
 
-  it("can make aural status updates", () => {});
+  it("can make aural status updates", () => {
+    const wrapper = shallow(<Game />);
+    wrapper.setState({
+      guesses: ["1", "2", "100"],
+      feedback: "test"
+    });
+
+    wrapper.instance().generateAuralUpdate();
+    expect(wrapper.state("auralStatus")).toEqual(
+      `Here's the status of the game right now: test You've made 3 guesses. In order of most- to least-recent, they are: 100, 2, 1`
+    );
+  });
 });
